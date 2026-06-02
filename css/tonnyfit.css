@@ -1,0 +1,400 @@
+@charset "UTF-8";
+
+/* 共通部分
+------------------------------- */
+html {
+  font-size: 100%;
+  background-color: #250900;
+}
+body {
+  font-family:
+    "Hiragino Kaku Gothic ProN", "Hiragino Sans", "BIZ UDPGothic", sans-serif;
+  line-height: 1.7;
+  color: rgba(255, 233, 220, 0.938);
+}
+a {
+  text-decoration: none;
+}
+img {
+  max-width: 100%;
+}
+
+/*レイアウト*/
+.wrapper {
+  max-width: 1120px;
+  margin: auto;
+  padding: 0.5rem;
+}
+.align-center {
+  text-align: center;
+}
+
+/* 見出し */
+.font-english {
+  font-family: "Philosopher", sans-serif;
+  font-weight: normal;
+}
+.page-title,
+.heading-large,
+.heading-midium {
+  font-size: 5rem;
+  text-align: center;
+  margin-top: 5rem;
+  line-height: 1.4;
+}
+.heading-large {
+  margin-bottom: 1rem;
+}
+.font-english {
+  margin-bottom: 30px;
+}
+
+/*サイドバー*/
+.side-menu {
+  list-style: none;
+  text-align: center;
+  margin-bottom: 7rem;
+}
+.side-menu li {
+  border-bottom: 1px solid #c9c2bc;
+}
+.side-menu a {
+  color: #0bd;
+  display: block;
+  padding: 1rem;
+}
+
+.side-menu a:hover {
+  color: #006e81;
+}
+
+/*ボタン*/
+.btn {
+  display: inline-block;
+  font-size: 1rem;
+  background-color: rgb(110, 50, 0);
+  color: #fff;
+  border-radius: 8px;
+  padding: 0.75rem 1.5rem;
+  transition: 0.5s;
+}
+
+.btn:hover {
+  background-color: #006e81;
+  transition: 0.5s;
+  scale: 1.2;
+}
+
+/* iframe */
+
+iframe {
+  width: 100%;
+}
+
+/*ヘッダー*/
+
+.page-header {
+  padding-top: 0.5rem;
+}
+.logo {
+  width: 50px;
+  justify-content: left;
+}
+.main-nav {
+  display: flex;
+  justify-content: center;
+  gap: 2.5rem;
+  font-size: 1.5rem;
+  list-style: none;
+}
+.main-nav a {
+  color: rgb(255, 242, 229);
+}
+.main-nav a:hover {
+  color: #0bd;
+}
+
+/*ヘッダーカバー画像*/
+
+.cover {
+  background-size: 100%;
+  background-position: center bottom;
+  height: 800px;
+}
+
+.sub-cover {
+  background-size: cover;
+  background-position: center bottom;
+  height: 528px;
+  margin-bottom: 4rem;
+}
+/*HOME*/
+.cover-home {
+  background-image: url(../images/IMG_5486\ .jpg);
+}
+.about {
+  max-width: 736px;
+  padding: 01.5rem;
+  margin: 3rem auto 0;
+}
+.about p {
+  margin-bottom: 3rem;
+}
+
+/*NEWS*/
+.cover-news {
+  background-image: url(../images/ashleaf-denim-7241697_1920.jpg);
+}
+.ad-title {
+  margin-top: 50px;
+  font-size: 80px;
+  text-align: center;
+}
+/* MENU */
+.cover-menu {
+  background-image: url(../images/jarmoluk-jeans-428614_1920.jpg);
+}
+
+.grid {
+  display: grid;
+  gap: 2rem 1.5rem;
+  grid-template-columns: repeat(2, 1fr);
+  text-align: center;
+}
+.item img {
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  border-radius: 16px;
+  margin-bottom: 1rem;
+}
+.item p {
+  font-size: 0.875rem;
+  margin-bottom: 3rem;
+}
+
+/* CONTACT */
+.cover-contact {
+  background-image: url(../images/martinkwame-woman-5815354_1920.jpg);
+}
+
+/* 店舗情報 */
+.location {
+  margin-bottom: 3.5rem;
+}
+.location-info {
+  margin-bottom: 2rem;
+}
+.location-info .info {
+  padding: 0;
+}
+/* お問い合わせ */
+.email {
+  max-width: 916px;
+
+  border-radius: 48px;
+  padding: 1.5rem 2.5rem 2.5rem;
+  margin: 0 auto 2rem;
+}
+.email p {
+  margin: 1rem 8rem 2rem 8rem;
+}
+
+/*記事部分*/
+.post {
+  margin-bottom: 3rem;
+}
+.post-title {
+  font-weight: normal;
+  margin-bottom: 1.25rem;
+}
+.post-info {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+.post-cat {
+  display: flex;
+  gap: 0.5rem;
+  list-style: none;
+}
+.post-cat a {
+  color: #432;
+  background-color: #86d3dd;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  padding: 0.5rem 0.75rem;
+}
+.post-cat a:hover {
+  background-color: #157a88;
+}
+.post-date {
+  font-size: 0.875rem;
+}
+.post-thumbnail {
+  border-radius: 16px;
+  margin-bottom: 1.5rem;
+}
+
+.post p {
+  margin-bottom: 1.5rem;
+  line-height: 2;
+}
+.ad {
+  border-radius: 16px;
+}
+/*フッター*/
+.page-footer {
+  background-image: url(../images/ashleaf-denim-7241697_1920.jpg);
+  background-size: contain;
+  background-position: top;
+}
+.info,
+.info th,
+.info td {
+  background-color: rgb(73, 29, 0);
+}
+.info {
+  width: 100%;
+  max-width: 544px;
+  margin: auto;
+  padding: 01.5rem;
+  border-spacing: 0;
+}
+.info th,
+.info td {
+  border-bottom: 1px solid #c9c2bc;
+}
+
+.info th {
+  padding-left: 2.5rem;
+}
+.info td {
+  padding: 1rem 0;
+}
+.copyright {
+  background-color: #130400;
+  text-align: center;
+  padding: 2rem 0;
+  margin-top: 6rem;
+  color: #fff;
+}
+
+/*デスクトップ版*/
+@media (min-width: 800px) {
+  /*見出し*/
+
+  .page-title,
+  .heading-large,
+  .heading-midium {
+    font-size: 3rem;
+    text-align: center;
+  }
+  .post-title {
+    font-size: 2rem;
+  }
+
+  /*ヘッダー*/
+  .page-header {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 1.5rem;
+    background-position: center;
+  }
+
+  .main-nav {
+    font-size: 2rem;
+  }
+  /*ヘッダーカバー画像*/
+
+  .sub-cover {
+    height: 400px;
+    margin-bottom: 6rem;
+  }
+  /*HOME*/
+  .cover-home {
+    background-image: url(../images/kranich17-jeans-5394561_1920.jpg);
+  }
+  /*NEWS*/
+  .cover-news {
+    background-image: url(../images/ashleaf-denim-7241697_1920.jpg);
+  }
+  .news-contents {
+    display: flex;
+    justify-content: space-between;
+  }
+  .post {
+    width: 50%;
+    order: 2;
+  }
+  .sidebar {
+    width: 20%;
+    order: 3;
+  }
+  .ad {
+    order: 1;
+    width: 20%;
+    height: 900px;
+    overflow: hidden;
+    margin-top: 10px;
+  }
+  .ad img {
+    width: auto;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 16px;
+  }
+  .ad-title {
+    margin-top: 50px;
+    font-size: 50px;
+    text-align: center;
+  }
+
+  .sidebar .heading-midium {
+    line-height: 1;
+    margin-bottom: 1rem;
+  }
+  /* MENU */
+  .grid {
+    gap: 3rem 2rem;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  /*CONTACT*/
+
+  .location {
+    display: flex;
+    gap: 2rem;
+    text-align: center;
+  }
+  .location-info {
+    width: 32%;
+  }
+  .location-info .info th {
+    padding-left: 2rem;
+  }
+  .location-map {
+    width: 64%;
+    margin-top: 5rem;
+  }
+
+  .email {
+    margin-bottom: 4rem;
+  }
+  .sns-item {
+    display: grid;
+    gap: 2rem 1.5rem;
+    grid-template-columns: repeat(2, 1fr);
+    margin-top: 5rem;
+  }
+  /* .sns-item {
+    flex: 1;
+  } */
+  /*フッター*/
+  .page-footer {
+    background-image: url(../images/kranich17-jeans-5394561_1920.jpg);
+    padding-top: 12rem;
+  }
+  .info th {
+    padding-left: 2.5rem;
+  }
+}
