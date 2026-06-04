@@ -37,16 +37,24 @@ img {
 .page-title,
 .heading-large,
 .heading-midium {
-  font-size: 5rem;
   text-align: center;
   margin-top: 5rem;
   line-height: 1.4;
 }
+.page-title {
+  font-size: 200px;
+  color: rgba(255, 233, 220, 0.938);
+  background-color: rgb(73, 15, 0);
+
+  font-weight: bold;
+}
 .heading-large {
   margin-bottom: 1rem;
+  font-size: 5rem;
 }
 .font-english {
   margin-bottom: 30px;
+  font-size: 5rem;
 }
 
 /*サイドバー*/
@@ -77,6 +85,7 @@ img {
   border-radius: 8px;
   padding: 0.75rem 1.5rem;
   transition: 0.5s;
+  margin: 50px 0 50px 0;
 }
 
 .btn:hover {
@@ -99,20 +108,37 @@ iframe {
 .logo {
   width: 50px;
   justify-content: left;
+  color: rgb(255, 242, 229);
+  display: flex;
+  margin-right: 20px;
 }
 .main-nav {
   display: flex;
   justify-content: center;
-  gap: 2.5rem;
-  font-size: 1.5rem;
+  gap: 2rem;
+  font-size: 2rem;
+
   list-style: none;
+  /* background-color: rgb(73, 15, 0); */
+
+  padding-right: 2rem;
+
+  border-radius: 20px;
 }
 .main-nav a {
   color: rgb(255, 242, 229);
+  background-color: rgb(73, 15, 0);
+  background-size: 50rem;
+  /* margin: 0.1rem 1rem 0.2rem 1rem; */
+  border-radius: 20px;
+  justify-content: center;
 }
 .main-nav a:hover {
   color: #0bd;
 }
+/* .h1 a {
+  justify-content: left;
+} */
 
 /*ヘッダーカバー画像*/
 
@@ -165,7 +191,7 @@ iframe {
   aspect-ratio: 1/1;
   object-fit: cover;
   border-radius: 16px;
-  margin-bottom: 1rem;
+  margin: 1rem 0 2rem 0;
 }
 .item p {
   font-size: 0.875rem;
@@ -245,13 +271,14 @@ iframe {
 /*フッター*/
 .page-footer {
   background-image: url(../images/ashleaf-denim-7241697_1920.jpg);
-  background-size: contain;
+  background-size: cover;
   background-position: top;
+  margin-top: 5rem;
 }
 .info,
 .info th,
 .info td {
-  background-color: rgb(73, 29, 0);
+  background-color: rgb(73, 15, 0);
 }
 .info {
   width: 100%;
@@ -298,7 +325,6 @@ iframe {
     display: flex;
     justify-content: space-between;
     padding-top: 1.5rem;
-    background-position: center;
   }
 
   .main-nav {
@@ -313,6 +339,7 @@ iframe {
   /*HOME*/
   .cover-home {
     background-image: url(../images/kranich17-jeans-5394561_1920.jpg);
+    background-position: top;
   }
   /*NEWS*/
   .cover-news {
