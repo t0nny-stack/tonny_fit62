@@ -1,24 +1,13 @@
 <!doctype html>
 <html lang="ja">
   <head>
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-E6779ZJ1W5"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-E6779ZJ1W5');
-</script> 
-     <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-E6779ZJ1W5"></script>
     <meta charset="utf-8" />
     <title>Tonny Fit - CONTACT</title>
     <meta name="description" content="ユーズド専門の洋服通販サイト" />
     <meta name="viewport" content="width=device-width, initial=scale=1" />
 
     <!--ファビコン-->
-    <link rel="icon" type="image/png" href="images/smile.jpg" />
+    <link rel="icon" type="image/png" href="images/31833963-60DB-429D-B823-72A00010497C.png" />
 
     <!--リセットCSS-->
     <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css" />
@@ -33,27 +22,48 @@
 
     <!--オリジナルCSS-->
     <link rel="stylesheet" href="css/tonnyfit.css" />
+
+    <style>
+      /* MENUボタンの配置とデザイン */
+      .btn-menu {
+        position: absolute;
+        top: 12px;
+        right: 12px;
+        border: 1px solid rgba(255, 255, 255, 0.5);
+        color: rgb(255, 233, 220);
+        padding: 0.5rem 1rem;
+        z-index: 1000; /* メニューより手前に表示 */
+        cursor: pointer;
+
+        /* 👈 ボタンのフォントをPhilosopherに指定 */
+        font-family: "Philosopher", sans-serif;
+        font-weight: bold;
+        font-size: 1rem;
+
+        letter-spacing: 0.05em;
+      }
+    </style>
   </head>
 
   <body>
     <div class="sub-cover cover-contact">
-      <header class="page-header wrapper">
-        <h1 class="align-center">
-          <a href="index.html">
-            <img class="logo" src="images/smile.jpg" alt="TonnyFitホーム" />
-          </a>
-        </h1>
-
-        <nav>
-          <ul class="main-nav font-english">
-            <li><a href="index.html">Top</a></li>
-            <li><a href="news.html">News</a></li>
-            <li><a href="menu.html">Menu</a></li>
-            <li><a href="contact.html">Contact</a></li>
+     <header>
+      <div class="logo">
+        <!-- 実際のロゴ画像の代わりにテキストを配置 -->
+        <!-- <h1><a href="#">長谷川酒造株式会社</a></h1> -->
+        <img class="logo" src="images/31833963-60DB-429D-B823-72A00010497C.png" alt="TonnyFitホーム" />
+      </div>
+      <nav>
+        <button class="btn-menu">MENU</button>
+        <ul class="nav-links font-english">
+            <li><a href="index.html">TOP</a></li>
+            <li><a href="news.html">NEWS</a></li>
+            <li><a href="onlineshop/online.html">ONLINE SHOP</a></li>
+            <li><a href="contact.html">CONTACT</a></li>
+            <!-- <li><a href="online.html" class="btn-online">ONLINE SHOP</a></li> -->
           </ul>
-        </nav>
-      </header>
-
+      </nav>
+    </header>
       <h2 class="page-title font-english">Contact</h2>
     </div>
 
@@ -88,15 +98,197 @@
           ></iframe>
         </div>
       </section>
+       <style>
+
+      /* FAQカバー画像 */
+      /* .cover-faq {
+        background-image: url(images/IMG_5489.jpg);
+      } */
+      /* .heading-midium {
+        font-size: 50px;
+        justify-content: center;
+      } */
+      /* アコーディオン全体 */
+      .faq {
+        max-width: 800px;
+        margin: 0 auto 5rem;
+        padding: 0 1.5rem;
+        font-size: 100%;
+      }
+
+      /* 1つのQ&Aブロック */
+      .accordion-item {
+        border-bottom: 1px solid #ddd;
+      }
+
+      /* 質問ボタン */
+      .accordion-question {
+        width: 100%;
+        text-align: left;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 1.25rem 2.5rem 1.25rem 0;
+        font-size: 1.1rem;
+        font-family: inherit;
+        color: rgb(255, 242, 229);
+        position: relative;
+        line-height: 1.6;
+      }
+
+      /* 矢印アイコン */
+      .accordion-question::after {
+        content: "▼";
+        position: absolute;
+        right: 0.5rem;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 0.75rem;
+        color: #0bd;
+        transition: transform 0.3s;
+      }
+
+      /* 開いたときに矢印を反転 */
+      .accordion-question.is-open::after {
+        transform: translateY(-50%) rotate(180deg);
+      }
+
+      /* 回答（初期状態：非表示） */
+      .accordion-answer {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease;
+      }
+
+      /* 回答（開いた状態） */
+      .accordion-answer.is-open {
+        max-height: 300px;
+      }
+
+      .accordion-answer p {
+        padding: 0 0.5rem 1.25rem;
+        color: rgb(255, 242, 229);
+        line-height: 1.8;
+      }
+
+      .faq1:hover {
+        color: #0bd;
+      }
+      /* Q / A ラベル */
+      .label-q,
+      .label-a {
+        display: inline-block;
+        font-family: "Philosopher", sans-serif;
+        font-size: 1.1rem;
+        font-weight: bold;
+        margin-right: 0.5rem;
+      }
+      .label-q {
+        color: #0bd;
+      }
+      .label-a {
+        color: rgb(255, 242, 229);
+      }
+
+      .faq h3 {font-size: 3rem;}
+
+    </style>
+  </head>
+
+  <body>
+    <div class="sub-cover cover-faq">
+      
+      <!-- <div class="faq1">
+        <h2 class="page-title font-english">FAQ</h2>
+      </div> -->
+    </div>
+
+    <main class="faq">
+      <section>
+        <h3 class="heading-medium font-english" style="margin-bottom: 1rem">
+          Q&A
+        </h3>
+
+        <div class="accordion-item">
+          <button class="accordion-question">
+            <span class="label-q">Q.</span>予約方法は？
+          </button>
+          <div class="accordion-answer">
+            <p>
+              <span class="label-a">A.</span
+              >はい、お電話またはメールにてご予約を承っております。ご来店前日までにご予約ください。
+            </p>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-question">
+            <span class="label-q">Q.</span>駐車場はありますか？
+          </button>
+          <div class="accordion-answer">
+            <p>
+              <span class="label-a">A.</span
+              >ビル直下の駐車場がございます。詳しくは表参道ヒルズの駐車場をご検索ください。
+            </p>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-question">
+            <span class="label-q">Q.</span>買取は行っていますか？
+          </button>
+          <div class="accordion-answer">
+            <p>
+              <span class="label-a">A.</span>店舗にての買取は行っておりません。
+            </p>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-question">
+            <span class="label-q">Q.</span>アレルギー対応はしていますか？
+          </button>
+          <div class="accordion-answer">
+            <p>
+              <span class="label-a">A.</span
+              >アレルギーをお持ちのお客様はご注文前にスタッフへお申し付けください。可能な範囲で対応させていただきます。ただし、完全な除去が難しい場合もございますのでご了承ください。
+            </p>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-question">
+            <span class="label-q">Q.</span>Wi-Fiは使えますか？
+          </button>
+          <div class="accordion-answer">
+            <p>
+              <span class="label-a">A.</span
+              >店内では無料Wi-Fiをご利用いただけます。パスワードはレジにてお知らせしております。
+            </p>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-question">
+            <span class="label-q">Q.</span>ペットは連れて入れますか？
+          </button>
+          <div class="accordion-answer">
+            <p>
+              <span class="label-a">A.</span
+              >屋外テラス席に限り、小型ペットの同伴が可能です。店内へのペットのお連れは衛生上ご遠慮いただいております。
+            </p>
+          </div>
+        </div>
+      </section>
 
       <sectio class="email">
-        <h3 class="heading-midium font-english">Contact</h3>
+        <h3 class="heading-midium font-english">その他お問い合わせ</h3>
         <p>
-          こちらのボタンからメールにてお問い合わせください。２営業日以内にご返信させていただきまます。
+          Q&Aにないお問い合わせにつきましては、メールフォームに内容を記載の上ご送信ください。２営業日以内にご返信させていただきまます。
           もし数日中に変身がない場合は、正しく受信できなかった可能性がありますので、大変恐れ入りますが下記SNS、もしくはお電話にて再度ご連絡ください。
         </p>
         <div class="align-center">
-          <a class="btn" href="mailto:tonnyfitinfo@example.com">お問い合わせ</a>
+          <a class="btn" href="mailto:tonnyfitinfo@example.com">メールで問い合わせ</a>
         </div>
       </section>
 
@@ -121,24 +313,44 @@
     </main>
 
     <footer class="page-footer">
-      <table class="info">
-        <h3 class="heading-large font-english">Information</h3>
-        <tr>
-          <th>住所</th>
-          <td>東京都渋谷区表参道0-0　○○○</td>
-        </tr>
-        <tr>
-          <th>電話</th>
-          <td>03-1111-ZZZZ</td>
-        </tr>
-        <tr>
-          <th>営業時間</th>
-          <td>24h</td>
-        </tr>
-      </table>
+      <div class="info-container">
+    <h3 class="heading-large font-english">Information</h3>
+    
+    <table class="info">
+      <tr>
+        <th>住所</th>
+        <td>東京都渋谷区表参道0-0 ○○○</td>
+      </tr>
+      <tr>
+        <th>電話</th>
+        <td>03-1111-XXXX</td>
+      </tr>
+      <tr>
+        <th>営業時間</th>
+        <td>24h</td>
+      </tr>
+    </table>
+  </div>
       <div class="copyright">
         <small>&copy; 2026 Tonny Fit</small>
       </div>
     </footer>
   </body>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const btn = document.querySelector(".btn-menu");
+      const nav = document.querySelector(".nav-links");
+
+      if (btn && nav) {
+        btn.addEventListener("click", () => {
+          nav.classList.toggle("open-menu");
+          if (btn.innerHTML === "MENU") {
+            btn.innerHTML = "CLOSE";
+          } else {
+            btn.innerHTML = "MENU";
+          }
+        });
+      }
+    });
+  </script>
 </html>

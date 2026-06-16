@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>レーベル一覧 | TonnyFit</title>
+    <!-- 💡 これで上で作った共通CSSを読み込みます！ -->
+    <link rel="stylesheet" href="../css/item.css" />
+
+    <style>
+      /* ==========================================
+         レーベルページ専用のグリッドデザイン
+         ========================================== */
+      .label-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 40px 20px;
+      }
+      .page-title {
+        font-size: 26px;
+        font-weight: 700;
+        margin-bottom: 30px;
+        letter-spacing: 2px;
+      }
+
+      /* BEAMS風の4列グリッド */
+      .label-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* スマホ2列 */
+        gap: 30px 20px;
+      }
+      @media (min-width: 768px) {
+        .label-grid {
+          grid-template-columns: repeat(4, 1fr); /* PC4列 */
+        }
+      }
+
+      .label-card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+      .label-image-box {
+        width: 100%;
+        aspect-ratio: 1 / 1;
+        background-color: rgba(255, 233, 220, 0.05);
+        border: 1px solid rgba(255, 233, 220, 0.1);
+        overflow: hidden;
+        margin-bottom: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s ease;
+      }
+      .label-image-box img {
+        width: 100%; /* 枠の横幅いっぱいに広げる */
+        height: 100%; /* 枠の縦幅いっぱいに広げる */
+        object-fit: cover; /* 枠に合わせて画像を綺麗にトリミングして敷き詰める */
+        transition: transform 0.3s ease;
+      }
+      .label-name {
+        font-size: 14px;
+        font-weight: bold;
+        color: rgb(255, 233, 220);
+        margin-bottom: 4px;
+        transition: color 0.2s ease;
+      }
+      .label-description {
+        font-size: 11px;
+        color: rgba(255, 233, 220, 0.6);
+        line-height: 1.4;
+        max-width: 90%;
+      }
+
+      /* ✨ ホバー時の連動エフェクト */
+      .label-card:hover .label-image-box {
+        border-color: rgb(0, 146, 172);
+        box-shadow: 0 0 10px rgba(0, 146, 172, 0.2);
+      }
+      .label-card:hover .label-image-box img {
+        transform: scale(1.05);
+      }
+      .label-card:hover .label-name {
+        color: rgb(0, 146, 172);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ヘッダー（共通CSSから自動適用） -->
+    <header>
+      <div class="header-container">
+        <a href="online.html" class="logo">
+          <img
+            class="logo"
+            src="../images/31833963-60DB-429D-B823-72A00010497C.png"
+            alt="TonnyFitホーム"
+          />
+        </a>
+        <nav class="nav-links">
+          <a href="online.html">オンライントップ</a>
+          <a href="category.html">アイテム</a>
+          <a href="styling.html">スタイリング</a>
+          <a href="label.html" style="color: rgb(0, 146, 172)">レーベル</a>
+          <a href="../index.html">公式サイト</a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- メインコンテンツ -->
+    <div class="label-container">
+      <h2 class="page-title">レーベル</h2>
+
+      <!-- 性別タブ（共通CSSから自動適用） -->
+      <div class="tab-container">
+        <span class="tab-item active">ALL</span>
+        <span class="tab-item">MEN</span>
+        <span class="tab-item">WOMEN</span>
+        <span class="tab-item">KIDS</span>
+      </div>
+
+      <!-- BEAMS風グリッド -->
+      <div class="label-grid">
+        <!-- レーベル1 -->
+        <a href="#" class="label-card">
+          <div class="label-image-box">
+            <img src="../images/cloe.jpg" alt="Cloe" />
+          </div>
+          <p class="label-name">Chloe</p>
+          <p class="label-description">
+            日常を少し贅沢にする、大人のための上質なデイリーカジュアルウェア。
+          </p>
+        </a>
+        <!-- レーベル2 -->
+        <a href="#" class="label-card">
+          <div class="label-image-box">
+            <img src="../images/alexanderwang.jpg" alt="alexanderwang" />
+          </div>
+          <p class="label-name">alexanderwang</p>
+          <p class="label-description">
+            時代に左右されないベーシックな定番アイテムを提案するライン。
+          </p>
+        </a>
+        <!-- レーベル3 -->
+        <a href="#" class="label-card">
+          <div class="label-image-box">
+            <img src="../images/adererror.jpg" alt="adererror" />
+          </div>
+          <p class="label-name">ADERERROR</p>
+          <p class="label-description">
+            ビジネスからフォーマルまで、洗練されたテーラードスタイル。
+          </p>
+        </a>
+
+        <!-- レーベル4 -->
+        <a href="#" class="label-card">
+          <div class="label-image-box">
+            <img src="../images/diesel.jpg" alt="Diesel" />
+          </div>
+          <p class="label-name">DIESEL</p>
+          <p class="label-description">
+            機能性と街着としてのデザイン性を両立したアクティブウェア。
+          </p>
+        </a>
+        <!-- レーベル5 -->
+        <a href="#" class="label-card">
+          <div class="label-image-box">
+            <img src="../images/levis.jpg" alt="Levi's" />
+          </div>
+          <p class="label-name">Levi's</p>
+          <p class="label-description">
+            機能性と街着としてのデザイン性を両立したアクティブウェア。
+          </p>
+        </a>
+        <!-- レーベル6 -->
+        <a href="#" class="label-card">
+          <div class="label-image-box">
+            <img src="../images/loewe.jpg" alt="loewe" />
+          </div>
+          <p class="label-name">LOEWE</p>
+          <p class="label-description">
+            機能性と街着としてのデザイン性を両立したアクティブウェア。
+          </p>
+        </a>
+
+        <!-- レーベル7 -->
+        <a href="#" class="label-card">
+          <div class="label-image-box">
+            <img src="../images/miumiu.jpg" alt="miumiu" />
+          </div>
+          <p class="label-name">MIUMIU</p>
+          <p class="label-description">
+            機能性と街着としてのデザイン性を両立したアクティブウェア。
+          </p>
+        </a>
+        <!-- レーベル6 -->
+        <a href="#" class="label-card">
+          <div class="label-image-box">
+            <img src="../images/satur.jpg" alt="satur" />
+          </div>
+          <p class="label-name">SATUR</p>
+          <p class="label-description">
+            機能性と街着としてのデザイン性を両立したアクティブウェア。
+          </p>
+        </a>
+      </div>
+    </div>
+
+    <!-- フッター（共通CSSから自動適用） -->
+    <footer>
+      <p>© TonnyFit Co., Ltd. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+      // タブ切り替え
+      document.querySelectorAll(".tab-item").forEach((item) => {
+        item.addEventListener("click", function () {
+          document.querySelectorAll(".tab-item").forEach((tab) => {
+            tab.classList.remove("active");
+          });
+          this.classList.add("active");
+        });
+      });
+    </script>
+  </body>
+</html>

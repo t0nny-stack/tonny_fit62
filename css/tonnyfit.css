@@ -29,32 +29,25 @@ img {
   text-align: center;
 }
 
-/* 見出し */
+/* タブ下の見出し */
 .font-english {
   font-family: "Philosopher", sans-serif;
   font-weight: normal;
+  margin-bottom: 30px;
+  font-size: 5rem;
 }
 .page-title,
 .heading-large,
 .heading-midium {
   text-align: center;
+  line-height: 1.3;
   margin-top: 5rem;
-  line-height: 1.4;
 }
 .page-title {
-  font-size: 200px;
+  font-size: 80px;
   color: rgba(255, 233, 220, 0.938);
   background-color: rgb(73, 15, 0);
-
   font-weight: bold;
-}
-.heading-large {
-  margin-bottom: 1rem;
-  font-size: 5rem;
-}
-.font-english {
-  margin-bottom: 30px;
-  font-size: 5rem;
 }
 
 /*サイドバー*/
@@ -64,7 +57,7 @@ img {
   margin-bottom: 7rem;
 }
 .side-menu li {
-  border-bottom: 1px solid #c9c2bc;
+  border-bottom: 1px solid rgb(255, 233, 220);
 }
 .side-menu a {
   color: #0bd;
@@ -81,7 +74,7 @@ img {
   display: inline-block;
   font-size: 1rem;
   background-color: rgb(110, 50, 0);
-  color: #fff;
+  color: rgb(255, 233, 220);
   border-radius: 8px;
   padding: 0.75rem 1.5rem;
   transition: 0.5s;
@@ -100,45 +93,130 @@ iframe {
   width: 100%;
 }
 
+/* ヘッダー酒造コピー */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 20px;
+  background-color: rgba(255, 255, 255, 0.5);
+  position: fixed;
+  width: 100%;
+  height: 80px;
+  top: 0;
+  z-index: 100;
+}
+
+header h1 {
+  font-size: 1.5rem;
+  font-weight: normal;
+}
+/* .nav-links {
+  color: rgb(255, 255, 255);
+  margin: 0.1rem 1rem 0.2rem 1re;
+  justify-content: center;
+} */
+
+/* .nav-links {
+  color: #c9c2bc;
+  margin-top: 20px;
+  display: flex;
+  list-style: none;
+  gap: 30px;
+  align-items: center;
+  justify-content: center;
+} */
+
+/* .nav-links:hover {
+  color: #0bd;
+} */
+
+.nav-links a {
+  color: rgb(22, 22, 22);
+  font-size: 1.3rem;
+}
+.nav-links a:hover {
+  color: #0bd;
+}
+
+/* .btn-online {
+  /* background-color: rgb(110, 50, 0); 
+  color: #fff;
+padding: 10px 20px; 
+  transition: 0.3s;
+   border-radius: 10px; 
+}
+
+.btn-online:hover {
+  background-color: #006e81;
+  transition: 0.5s;
+  scale: 1.2;
+} */
 /*ヘッダー*/
 
 .page-header {
   padding-top: 0.5rem;
 }
 .logo {
-  width: 50px;
+  /* size: 3rem; */
+  width: 130px;
   justify-content: left;
-  color: rgb(255, 242, 229);
+  color: rgb(255, 233, 220);
   display: flex;
-  margin-right: 20px;
+  margin-top: 5px;
 }
-.main-nav {
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-  font-size: 2rem;
 
+/* 折り畳みメニュ */
+/* --- メニュー全体のスタイル（右から左へスライド） --- */
+.nav-links {
+  position: fixed;
+  top: 0;
+  right: 0; /* 👈 右端に配置 */
+  width: 250px; /* 👈 メニューの横幅（全画面ではなく固定幅に） */
+  height: 100vh; /* 👈 画面の縦いっぱいに広げる */
+  background: none; /* 背景色はいらない（透明） */
+  padding: 70px 24px 30px 24px; /* 上部にボタンと被らない余白を作る */
+  z-index: 999;
+
+  /* 縦並び & 右揃えにするための設定 */
+  display: flex;
+  flex-direction: column; /* 項目を縦に並べる */
+  align-items: flex-end; /* 👈 項目を右揃えにする */
+  gap: 15px; /* 項目同士の縦の隙間 */
   list-style: none;
-  /* background-color: rgb(73, 15, 0); */
 
-  padding-right: 2rem;
+  /* 初期状態：右側に完全に隠す（自分の横幅分だけ右に持ち上げる） */
+  transform: translateX(100%); /* 👈 X軸（左右）の移動に切り替え */
+  /* 左右スライドのアニメーション設定 */
+  transition: transform 0.4s ease;
+}
 
-  border-radius: 20px;
+/* JavaScriptでこのクラスがつくと、右から左へスライドして出てくる */
+.nav-links.open-menu {
+  transform: translateX(0); /* 👈 X軸（左右）の移動をリセット */
 }
-.main-nav a {
-  color: rgb(255, 242, 229);
-  background-color: rgb(73, 15, 0);
-  background-size: 50rem;
-  /* margin: 0.1rem 1rem 0.2rem 1rem; */
-  border-radius: 20px;
-  justify-content: center;
+
+/* メニュー内のリンク文字の見た目 */
+.nav-links li {
+  width: auto; /* 右揃えを維持するため幅は自動 */
 }
-.main-nav a:hover {
-  color: #0bd;
+
+.nav-links a {
+  display: block;
+  color: rgb(255, 233, 220); /* 読みやすいように黒系の文字色 */
+  font-size: 1.3rem;
+  font-weight: bold;
+  text-decoration: none;
+  padding: 5px 0;
 }
-/* .h1 a {
+
+.nav-links a:hover {
+  color: #0bd; /* ホバー時は水色に */
+}
+
+.h1 a {
   justify-content: left;
-} */
+}
 
 /*ヘッダーカバー画像*/
 
@@ -162,8 +240,15 @@ iframe {
   max-width: 736px;
   padding: 01.5rem;
   margin: 3rem auto 0;
+  color: rgb(255, 233, 220);
 }
 .about p {
+  margin-bottom: 3rem;
+  color: rgb(255, 233, 220);
+}
+
+.about h3 {
+  color: rgb(255, 233, 220);
   margin-bottom: 3rem;
 }
 
@@ -275,39 +360,88 @@ iframe {
   background-position: top;
   margin-top: 5rem;
 }
-.info,
+/* .info,
 .info th,
 .info td {
-  background-color: rgb(73, 15, 0);
+  background-color: rgb(73, 15, 0, 0.5);
+} */
+
+/* フッター改善 */
+.info-container {
+  background-color: rgba(58, 18, 0, 0.8); /* 👈 今までの背景色をここに指定 */
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+  padding: 2rem 2rem 0 2rem; /* 内側に少し余白を作って、文字が枠線にピタッとくっつくのを防ぎます */
+  border-radius: 16px; /* （お好みで）角を少し丸くするとお洒落になります */
 }
+
+/* テーブル自体の背景色と余計なマージンをリセット */
 .info {
   width: 100%;
-  max-width: 544px;
-  margin: auto;
-  padding: 01.5rem;
   border-spacing: 0;
+  background-color: transparent; /* 背景を透明にして、親の背景色を透かせます */
+  margin-top: 2rem;
 }
+
+/* 元々あった個別の背景色指定は削除するか、以下のように transparent に変更します */
 .info th,
 .info td {
+  background-color: transparent; /* 透明にする */
   border-bottom: 1px solid #c9c2bc;
 }
 
+/* 見出し（Information）の上の余白が広すぎる場合はここで微調整 */
+.info-container .heading-large {
+  margin-top: 0;
+  color: rgb(255, 233, 220);
+}
+.info {
+  width: 100%;
+  max-width: 1200px;
+
+  margin: auto;
+  /* padding: 01.5rem; */
+  border-spacing: 0;
+  /* border-radius: 26px; */
+}
+.info th,
+.info td {
+  border-bottom: 1px solid rgb(255, 233, 220);
+}
+
 .info th {
-  padding-left: 2.5rem;
+  padding-left: 1rem;
 }
 .info td {
-  padding: 1rem 0;
+  padding: 2rem 0;
 }
 .copyright {
   background-color: #130400;
   text-align: center;
   padding: 2rem 0;
   margin-top: 6rem;
-  color: #fff;
+  color: rgb(255, 233, 220);
 }
 
 /*デスクトップ版*/
 @media (min-width: 800px) {
+  /* メニュータブ */
+  .nav-links {
+    gap: 20px !important;
+  }
+  .nav-links a {
+    color: rgb(
+      255,
+      233,
+      220
+    ) !important; /* 👈 例：背景に馴染むクリーム系（お好みの色に変えてください） */
+  }
+
+  .nav-links a:hover {
+    color: #0bd !important; /* 👈 デスクトップ版のホバー時の色（例：オレンジ系） */
+  }
+
   /*見出し*/
 
   .page-title,
@@ -330,6 +464,10 @@ iframe {
   .main-nav {
     font-size: 2rem;
   }
+  .nav-links {
+    gap: 4rem;
+    margin-right: 1.5rem;
+  }
   /*ヘッダーカバー画像*/
 
   .sub-cover {
@@ -338,8 +476,10 @@ iframe {
   }
   /*HOME*/
   .cover-home {
-    background-image: url(../images/kranich17-jeans-5394561_1920.jpg);
-    background-position: top;
+    background-image: url(../images/85979D07-23DB-4842-A362-60F8D584037B\ \(1\).png);
+    background-position: center;
+    background-size: 1400px;
+    margin-top: 6rem;
   }
   /*NEWS*/
   .cover-news {
@@ -390,18 +530,32 @@ iframe {
 
   .location {
     display: flex;
-    gap: 2rem;
-    text-align: center;
+    justify-content: center; /* 👈 左右の要素を中央に寄せる */
+    align-items: flex-start; /* 上のラインを揃える */
+    gap: 40px; /* インフォメーションとマップの間の余白 */
+    max-width: 1120px; /* 👈 他のコンテンツ（.wrapper）と横幅の限界を統一 */
+    margin: 0 auto 3.5rem; /* 👈 左右中央寄せにしつつ、下にマージンを空ける */
+    padding: 0 1rem; /* 画面端にピタッとくっつかないように */
   }
+
   .location-info {
-    width: 32%;
+    flex: 1; /* 柔軟に幅を持たせる */
+    max-width: 400px; /* 👈 テーブルが広がりすぎないように制限 */
+    margin-bottom: 0; /* デスクトップ版では下の余白をリセット */
   }
+
   .location-info .info th {
     padding-left: 2rem;
   }
+
   .location-map {
-    width: 64%;
+    flex: 1;
+    max-width: 720px; /* iframeの幅と連動 */
     margin-top: 5rem;
+  }
+
+  .location-map iframe {
+    width: 100%; /* 領域いっぱいにマップを広げる */
   }
 
   .email {
@@ -413,15 +567,30 @@ iframe {
     grid-template-columns: repeat(2, 1fr);
     margin-top: 5rem;
   }
-  /* .sns-item {
-    flex: 1;
-  } */
+
   /*フッター*/
   .page-footer {
     background-image: url(../images/kranich17-jeans-5394561_1920.jpg);
     padding-top: 12rem;
   }
-  .info th {
-    padding-left: 2.5rem;
+  .page-footer .info th {
+    padding-left: 100px;
+  }
+  .page-footer .info td {
+    padding: 2rem 0;
+    padding-left: 280px;
+  }
+  .info {
+    width: 100%;
+    max-width: 150rem;
+  }
+
+  /* 以下のコードをメディアクエリ（min-width: 800px）内に追加 */
+  .location-info .info th {
+    padding-left: 10px; /* 左側の余白を適切なサイズにリセット */
+    width: 35%; /* 見出しの幅を固定して綺麗に揃える */
+  }
+  .location-info .info td {
+    padding-left: 10px; /* 280pxになっていた余白をリセット */
   }
 }

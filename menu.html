@@ -1,25 +1,13 @@
 <!doctype html>
 <html lang="ja">
   <head>
-
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-E6779ZJ1W5"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-E6779ZJ1W5');
-</script> 
-     <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-E6779ZJ1W5"></script>
     <meta charset="utf-8" />
-    <title>Tonny Fit - MENU</title>
+    <title>Tonny Fit - OnlineShop</title>
     <meta name="description" content="ユーズド専門の洋服通販サイト" />
     <meta name="viewport" content="width=device-width, initial=scale=1" />
 
     <!--ファビコン-->
-    <link rel="icon" type="image/png" href="images/smile.jpg" />
+    <link rel="icon" type="image/png" href="images/31833963-60DB-429D-B823-72A00010497C.png" />
 
     <!--リセットCSS-->
     <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css" />
@@ -44,28 +32,50 @@
     <link rel="stylesheet" href="css/tonnyfit.css" />
 
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <style>
+      /* MENUボタンの配置とデザイン */
+      .btn-menu {
+        position: absolute;
+        top: 12px;
+        right: 12px;
+        border: 1px solid rgba(255, 255, 255, 0.5);
+        color: rgb(255, 233, 220);
+        padding: 0.5rem 1rem;
+        z-index: 1000; /* メニューより手前に表示 */
+        cursor: pointer;
+
+        /* 👈 ボタンのフォントをPhilosopherに指定 */
+        font-family: "Philosopher", sans-serif;
+        font-weight: bold;
+        font-size: 1rem;
+
+        letter-spacing: 0.05em;
+      }
+    </style>
   </head>
 
   <body>
     <div class="sub-cover cover-menu">
-      <header class="page-header wrapper">
-        <h1 class="align-center">
-          <a href="index.html">
-            <img class="logo" src="images/smile.jpg" alt="TonnyFitホーム" />
-          </a>
-        </h1>
-
-        <nav>
-          <ul class="main-nav font-english">
-            <li><a href="index.html">Top</a></li>
-            <li><a href="news.html">News</a></li>
-            <li><a href="menu.html">Menu</a></li>
-            <li><a href="contact.html">Contact</a></li>
+      
+<header>
+      <div class="logo">
+        <!-- 実際のロゴ画像の代わりにテキストを配置 -->
+        <!-- <h1><a href="#">長谷川酒造株式会社</a></h1> -->
+        <img class="logo" src="images/31833963-60DB-429D-B823-72A00010497C.png" alt="TonnyFitホーム" />
+      </div>
+      <nav>
+        <button class="btn-menu">MENU</button>
+        <ul class="nav-links font-english">
+            <li><a href="index.html">TOP</a></li>
+            <li><a href="news.html">NEWS</a></li>
+            <li><a href="menu.html">ONLINE SHOP</a></li>
+            <li><a href="contact.html">CONTACT</a></li>
+            <!-- <li><a href="online.html" class="btn-online">ONLINE SHOP</a></li> -->
           </ul>
-        </nav>
-      </header>
+      </nav>
+    </header>
 
-      <h2 class="page-title font-english">Menu</h2>
+      <h2 class="page-title font-english">Online Shop</h2>
     </div>
 
     <main class="wrapper grid">
@@ -122,21 +132,24 @@
     </main>
 
     <footer class="page-footer">
-      <table class="info">
-        <h3 class="heading-large font-english">Information</h3>
-        <tr>
-          <th>住所</th>
-          <td>東京都渋谷区表参道0-0　○○○</td>
-        </tr>
-        <tr>
-          <th>電話</th>
-          <td>03-1111-XXXX</td>
-        </tr>
-        <tr>
-          <th>営業時間</th>
-          <td>24h</td>
-        </tr>
-      </table>
+      <div class="info-container">
+    <h3 class="heading-large font-english">Information</h3>
+    
+    <table class="info">
+      <tr>
+        <th>住所</th>
+        <td>東京都渋谷区表参道0-0 ○○○</td>
+      </tr>
+      <tr>
+        <th>電話</th>
+        <td>03-1111-XXXX</td>
+      </tr>
+      <tr>
+        <th>営業時間</th>
+        <td>24h</td>
+      </tr>
+    </table>
+  </div>
       <div class="copyright">
         <small>&copy; 2026 Tonny Fit</small>
       </div>
@@ -145,6 +158,23 @@
       AOS.init();
     </script>
   </body>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const btn = document.querySelector(".btn-menu");
+      const nav = document.querySelector(".nav-links");
+
+      if (btn && nav) {
+        btn.addEventListener("click", () => {
+          nav.classList.toggle("open-menu");
+          if (btn.innerHTML === "MENU") {
+            btn.innerHTML = "CLOSE";
+          } else {
+            btn.innerHTML = "MENU";
+          }
+        });
+      }
+    });
+  </script>
 
   <!-- JavaScript -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/luminous-lightbox/2.3.2/luminous.min.js"></script>

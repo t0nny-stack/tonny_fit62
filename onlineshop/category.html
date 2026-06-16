@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>アイテムを探す | TonnyFit</title>
+    <!-- 💡 共通のCSSファイルを読み込み（これで土台やドット付きメニューも一発適用！） -->
+    <link rel="stylesheet" href="../css/item.css" />
+
+    <style>
+      /* ==========================================
+         アイテムページ専用のスタイル定義（グリッドと配置のみ）
+         ========================================== */
+      /* メインレイアウト（共通2カラム構造） */
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        padding: 40px 20px;
+        gap: 40px;
+      }
+      main {
+        flex-grow: 1;
+      }
+      .page-title {
+        font-size: 26px;
+        font-weight: 700;
+        margin-bottom: 30px;
+        letter-spacing: 2px;
+      }
+
+      /* サイドバー（アイテムを探す用ナビ） */
+      aside {
+        width: 200px;
+        flex-shrink: 0;
+      }
+      .filter-section h3 {
+        font-size: 16px;
+        font-weight: bold;
+        margin-bottom: 15px;
+        border-bottom: 1px solid rgba(255, 233, 220, 0.3);
+        padding-bottom: 5px;
+      }
+      .filter-list {
+        list-style: none;
+      }
+      .filter-list li {
+        margin-bottom: 12px;
+      }
+      .filter-list a {
+        font-size: 14px;
+        color: rgba(255, 233, 220, 0.8);
+      }
+      .filter-list a:hover {
+        color: rgb(0, 146, 172);
+      }
+
+      /* スマホ表示の時のレイアウト微調整 */
+      @media (max-width: 768px) {
+        .container {
+          flex-direction: column;
+          gap: 20px;
+        }
+        aside {
+          width: 100%;
+          margin-bottom: 20px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ヘッダー（共通CSSから自動適用） -->
+    <header>
+      <div class="header-container">
+        <a href="online.html" class="logo">
+          <img
+            class="logo"
+            src="../images/31833963-60DB-429D-B823-72A00010497C.png"
+            alt="TonnyFitホーム"
+          />
+        </a>
+        <nav class="nav-links">
+          <a href="online.html">オンライントップ</a>
+          <a href="category.html" style="color: rgb(0, 146, 172) !important"
+            >アイテム</a
+          >
+          <a href="styling.html">スタイリング</a>
+          <a href="label.html">レーベル</a>
+          <a href="../index.html">公式サイト</a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- メインレイアウト -->
+    <div class="container">
+      <!-- 左：サイドバー -->
+      <aside>
+        <div class="filter-section">
+          <h3>アイテムを探す</h3>
+          <ul class="filter-list">
+            <li>
+              <a href="#" style="font-weight: bold; color: rgb(0, 146, 172)"
+                >カテゴリから探す</a
+              >
+            </li>
+            <li><a href="label.html">レーベルから探す</a></li>
+            <li><a href="#">ショップから探す</a></li>
+          </ul>
+        </div>
+      </aside>
+
+      <!-- 右：メインコンテンツ -->
+      <main>
+        <h2 class="page-title">アイテムを探す</h2>
+
+        <!-- 性別選択（共通CSSから自動適用） -->
+        <div class="tab-container">
+          <span class="tab-item active">MEN</span>
+          <span class="tab-item">WOMEN</span>
+          <span class="tab-item">KIDS</span>
+        </div>
+
+        <!-- 全てを見るリンク（共通CSSから自動適用） -->
+        <div>
+          <a href="index.html" class="all-items-link">すべてのアイテムを見る</a>
+        </div>
+
+        <!-- カテゴリブロック：シャツ -->
+        <div class="category-group">
+          <h3>シャツ・ブラウス</h3>
+          <div class="sub-category-grid">
+            <a href="index.html">カジュアルシャツ</a>
+            <a href="#">ドレスシャツ</a>
+            <a href="#">ブラウス・プルオーバー</a>
+            <a href="#">ポロシャツ</a>
+            <a href="#">その他シャツ</a>
+          </div>
+        </div>
+
+        <!-- カテゴリブロック：Tシャツ -->
+        <div class="category-group">
+          <h3>Tシャツ・カットソー</h3>
+          <div class="sub-category-grid">
+            <a href="#">Tシャツ</a>
+            <a href="#">プリントTシャツ</a>
+            <a href="#">カットソー</a>
+            <a href="#">タンクトップ</a>
+            <a href="#">その他Tシャツ・カットソー</a>
+          </div>
+        </div>
+
+        <!-- カテゴリブロック：パンツ -->
+        <div class="category-group">
+          <h3>パンツ</h3>
+          <div class="sub-category-grid">
+            <a href="index.html" class="highlight"
+              >カジュアルパンツ（★ココから戻れます）</a
+            >
+            <a href="#">チノパンツ</a>
+            <a href="#">デニムパンツ</a>
+            <a href="#">ミリタリーパンツ</a>
+            <a href="#">ショートパンツ</a>
+            <a href="#">スラックス</a>
+          </div>
+        </div>
+
+        <!-- カテゴリブロック：アウター -->
+        <div class="category-group">
+          <h3>ジャケット・ブルゾン</h3>
+          <div class="sub-category-grid">
+            <a href="#">テーラードジャケット</a>
+            <a href="#">ブルゾン</a>
+            <a href="#">ダウンジャケット</a>
+            <a href="#">ミリタリージャケット</a>
+            <a href="#">コート</a>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <!-- フッター（共通CSSから自動適用） -->
+    <footer>
+      <p>© TonnyFit Co., Ltd. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+      // タブの切り替え処理
+      document.querySelectorAll(".tab-item").forEach((item) => {
+        item.addEventListener("click", function () {
+          document.querySelectorAll(".tab-item").forEach((tab) => {
+            tab.classList.remove("active");
+          });
+          this.classList.add("active");
+        });
+      });
+    </script>
+  </body>
+</html>
