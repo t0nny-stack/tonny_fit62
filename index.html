@@ -42,22 +42,35 @@
 
     <style>
       /* MENUボタンの配置とデザイン */
+      /* MENUボタンの配置とデザイン */
       .btn-menu {
         position: absolute;
-        top: 12px;
-        right: 12px;
-        border: 1px solid rgba(255, 255, 255, 0.5);
-        color: rgb(7, 7, 7);
+        top: 15px;
+        right: 20px;
+        background-color: transparent; /* 背景を透明に */
+        border: 1px solid rgb(255, 246, 237); /*枠線 */
+        color: rgb(36, 36, 36); /* 👈 文字色も全体のテーマカラーに合わせる */
         padding: 0.5rem 1rem;
-        z-index: 1000; /* メニューより手前に表示 */
+        z-index: 1000;
         cursor: pointer;
-
-        /* 👈 ボタンのフォントをPhilosopherに指定 */
         font-family: "Philosopher", sans-serif;
         font-weight: bold;
         font-size: 1rem;
-
         letter-spacing: 0.05em;
+        border-radius: 10px;
+        transition:
+          background-color 0.3s ease,
+          color 0.3s ease; /* ホバー時にじわっと変える */
+      }
+
+      .btn-menu:hover {
+        background-color: #9b4600 !important;
+        color: rgb(255, 244, 237) !important;
+        border-color: transparent;
+      }
+
+      .btn-menu a {
+        color: rgb(36, 36, 36);
       }
     </style>
   </head>
@@ -79,14 +92,14 @@
         <ul class="nav-links font-english">
           <li><a href="index.html">TOP</a></li>
           <li><a href="news.html">NEWS</a></li>
-          <li><a href="onlineshop/online.html">ONLINE SHOP</a></li>
           <li><a href="contact.html">CONTACT</a></li>
+          <li><a href="onlineshop/online.html">ONLINE STORE</a></li>
           <!-- <li><a href="online.html" class="btn-online">ONLINE SHOP</a></li> -->
         </ul>
       </nav>
     </header>
 
-    <div class="cover cover-home">
+    <div class="cover cover-home fade-in-up">
       <!-- <header class="page-header wrapper">
         <h1 class="align-center">
           <a href="index.html"></a>
@@ -94,18 +107,61 @@
       </header> -->
     </div>
 
-    <section class="about">
+    <section class="about fade-in-up">
       <h3 class="heading-large font-english">About TonnyFit</h3>
       <p>
         我々TonnyFitは、２０２６年３月に開始した“世界中のユーズド製品”をデニムを中心に取り扱い、通信販売を行っているサービスです。
-        洋服はもちろん、アクセサリーや小物も取り扱っていますので、ぜひ一度ご覧になってください。
+        <br />洋服はもちろん、アクセサリーや小物も取り扱っていますので、ぜひ一度ご覧になってください。
       </p>
-      <div class="align-center">
-        <a class="btn" href="menu.html">メニューを見る</a>
+    </section>
+
+    <!-- 追加するこだわりセクションの例 -->
+    <section class="features wrapper fade-in-up">
+      <h2 class="font-english">Our Core</h2>
+      <div class="grid">
+        <div class="item">
+          <h3
+            class="font-english"
+            style="font-size: 1.5rem; margin-bottom: 1rem"
+          >
+            01. Rigid & Vintage
+          </h3>
+          <p>
+            時を経ても色褪せない、むしろ魅力を増すヴィンテージデニムだけを世界中からセレクト。
+          </p>
+        </div>
+        <div class="item">
+          <h3
+            class="font-english"
+            style="font-size: 1.5rem; margin-bottom: 1rem"
+          >
+            02. Only One
+          </h3>
+          <p>
+            大量生産にはない、ヒゲやアタリ、一つとして同じものがない「1点モノ」との出会いを提供します。
+          </p>
+        </div>
+        <div class="item">
+          <h3
+            class="font-english"
+            style="font-size: 1.5rem; margin-bottom: 1rem"
+          >
+            03. Sustainable Style
+          </h3>
+          <p>
+            良質なユーズド製品をケアし、永く愛用する。それこそが我々の提案するデニムライフです。
+          </p>
+        </div>
+      </div>
+
+      <div class="cta-buttons fade-in-up">
+        <a class="btn btn-primary" href="onlineshop/online.html">ONLINESTORE</a>
+        <a class="btn btn-secondary" href="menu.html">LOOK BOOK</a>
+        <a class="btn btn-topics" href="news.html">TOPICS</a>
       </div>
     </section>
 
-    <footer class="page-footer">
+    <footer class="page-footer fade-in-up">
       <!-- 枠線を繋げるために、全体を囲む div を追加します -->
       <div class="info-container">
         <h3 class="heading-large font-english">Information</h3>
@@ -131,26 +187,28 @@
       </div>
     </footer>
 
-    <!-- <footer class="page-footer">
-      <table class="info">
-        <h3 class="heading-large font-english">Information</h3>
-        <tr>
-          <th>住所</th>
-          <td>東京都渋谷区表参道0-0　○○○</td>
-        </tr>
-        <tr>
-          <th>電話</th>
-          <td>03-1111-XXXX</td>
-        </tr>
-        <tr>
-          <th>営業時間</th>
-          <td>24h</td>
-        </tr>
-      </table>
-      <div class="copyright">
-        <small>&copy; 2026 Tonny Fit</small>
-      </div>
-    </footer> -->
+    <script>
+      const fadeElements = document.querySelectorAll(".fade-in-up");
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              // 画面に入ったらクラスをつける
+              entry.target.classList.add("is-active");
+            } else {
+              // 👇 ここを追加！画面から消えたらクラスを外す
+              entry.target.classList.remove("is-active");
+            }
+          });
+        },
+        {
+          threshold: 0.1, // 少しでも画面に入ったら/出たら反応するように微調整
+        },
+      );
+
+      fadeElements.forEach((el) => observer.observe(el));
+    </script>
   </body>
 
   <!-- java -->

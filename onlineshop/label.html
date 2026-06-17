@@ -75,7 +75,7 @@
 
       /* ✨ ホバー時の連動エフェクト */
       .label-card:hover .label-image-box {
-        border-color: rgb(0, 146, 172);
+        border-color: rgb(255, 123, 0);
         box-shadow: 0 0 10px rgba(0, 146, 172, 0.2);
       }
       .label-card:hover .label-image-box img {
@@ -83,6 +83,19 @@
       }
       .label-card:hover .label-name {
         color: rgb(0, 146, 172);
+      }
+      /* --- フワッと表示用の共通スタイル --- */
+      .scroll-fade-in {
+        opacity: 0;
+        transform: translateY(20px);
+        transition:
+          opacity 0.8s ease-out,
+          transform 0.8s ease-out;
+        will-change: opacity, transform;
+      }
+      .scroll-fade-in.is-visible {
+        opacity: 1;
+        transform: translateY(0);
       }
     </style>
   </head>
@@ -111,10 +124,10 @@
 
     <!-- メインコンテンツ -->
     <div class="label-container">
-      <h2 class="page-title">レーベル</h2>
+      <h2 class="page-title scroll-fade-in">レーベル</h2>
 
       <!-- 性別タブ（共通CSSから自動適用） -->
-      <div class="tab-container">
+      <div class="tab-container scroll-fade-in">
         <span class="tab-item active">ALL</span>
         <span class="tab-item">MEN</span>
         <span class="tab-item">WOMEN</span>
@@ -123,8 +136,78 @@
 
       <!-- BEAMS風グリッド -->
       <div class="label-grid">
+        <!-- レーベル5 -->
+        <a href="#" class="label-card scroll-fade-in">
+          <div class="label-image-box">
+            <img src="../images/levis.jpg" alt="Levi's" />
+          </div>
+          <p class="label-name">Levi's</p>
+          <p class="label-description">
+            1873年にジーンズを生み出した原点であり頂点。時代を超えて愛されるタイムレスな名作が揃う。
+          </p>
+        </a>
+
+        <!-- レーベル9 -->
+        <a href="#" class="label-card scroll-fade-in">
+          <div class="label-image-box">
+            <img src="../images/Wrangler.jpg" alt="Wrangler" />
+          </div>
+          <p class="label-name">Wrangler</p>
+          <p class="label-description">
+            カウボーイのワークウェアをルーツに持ち、機能美と美しいシルエットを追求し続けるウエスタンデニムの名門。
+          </p>
+        </a>
+
+        <!-- レーベル10 -->
+        <a href="#" class="label-card scroll-fade-in">
+          <div class="label-image-box">
+            <img src="../images/Lee.jpg" alt="Lee" />
+          </div>
+          <p class="label-name">Lee</p>
+          <p class="label-description">
+            100年以上の歴史を誇り、頑丈なワークウェアの機能性とモダンなデザインを融合させた伝統のブランド。
+          </p>
+        </a>
+
+        <!-- レーベル11 -->
+        <a href="#" class="label-card scroll-fade-in">
+          <div class="label-image-box">
+            <!-- Calvin Kleinのimgタグの例 -->
+            <img
+              src="../images/Calvin Klein.jpg"
+              alt="Calvin Klein"
+              style="object-fit: cover; object-position: 18%"
+            />
+          </div>
+          <p class="label-name">Calvin Klein</p>
+          <p class="label-description">
+            無駄を削ぎ落としたミニマリズムの極み。クリーンで洗練された、都会的なアメリカン・コンテンポラリー。
+          </p>
+        </a>
+
+        <!-- レーベル12 -->
+        <a href="#" class="label-card scroll-fade-in">
+          <div class="label-image-box">
+            <img src="../images/EDWIN.webp" alt="EDWIN" />
+          </div>
+          <p class="label-name">EDWIN</p>
+          <p class="label-description">
+            日本発。卓越した職人技と革新的なウオッシュ加工が生み出す、圧倒的な穿き心地のクオリティ・デニム。
+          </p>
+        </a>
+
+        <!-- レーベル4 -->
+        <a href="#" class="label-card scroll-fade-in">
+          <div class="label-image-box">
+            <img src="../images/diesel.jpg" alt="Diesel" />
+          </div>
+          <p class="label-name">DIESEL</p>
+          <p class="label-description">
+            革新的な加工技術とエッジの効いたデザインで世界を牽引する、プレミアム・デニムの代名詞。
+          </p>
+        </a>
         <!-- レーベル1 -->
-        <a href="#" class="label-card">
+        <a href="#" class="label-card scroll-fade-in">
           <div class="label-image-box">
             <img src="../images/cloe.jpg" alt="Cloe" />
           </div>
@@ -134,7 +217,7 @@
           </p>
         </a>
         <!-- レーベル2 -->
-        <a href="#" class="label-card">
+        <a href="#" class="label-card scroll-fade-in">
           <div class="label-image-box">
             <img src="../images/alexanderwang.jpg" alt="alexanderwang" />
           </div>
@@ -144,7 +227,7 @@
           </p>
         </a>
         <!-- レーベル3 -->
-        <a href="#" class="label-card">
+        <a href="#" class="label-card scroll-fade-in">
           <div class="label-image-box">
             <img src="../images/adererror.jpg" alt="adererror" />
           </div>
@@ -154,28 +237,8 @@
           </p>
         </a>
 
-        <!-- レーベル4 -->
-        <a href="#" class="label-card">
-          <div class="label-image-box">
-            <img src="../images/diesel.jpg" alt="Diesel" />
-          </div>
-          <p class="label-name">DIESEL</p>
-          <p class="label-description">
-            革新的な加工技術とエッジの効いたデザインで世界を牽引する、プレミアム・デニムの代名詞。
-          </p>
-        </a>
-        <!-- レーベル5 -->
-        <a href="#" class="label-card">
-          <div class="label-image-box">
-            <img src="../images/levis.jpg" alt="Levi's" />
-          </div>
-          <p class="label-name">Levi's</p>
-          <p class="label-description">
-            1873年にジーンズを生み出した原点であり頂点。時代を超えて愛されるタイムレスな名作が揃う。
-          </p>
-        </a>
         <!-- レーベル6 -->
-        <a href="#" class="label-card">
+        <a href="#" class="label-card scroll-fade-in">
           <div class="label-image-box">
             <img src="../images/loewe.jpg" alt="loewe" />
           </div>
@@ -186,7 +249,7 @@
         </a>
 
         <!-- レーベル7 -->
-        <a href="#" class="label-card">
+        <a href="#" class="label-card scroll-fade-in">
           <div class="label-image-box">
             <img src="../images/miumiu.jpg" alt="miumiu" />
           </div>
@@ -195,8 +258,8 @@
             ヴィンテージへのオマージュとガーリーな感性が織りなす、自由でアイコニックなフレンチシック。
           </p>
         </a>
-        <!-- レーベル6 -->
-        <a href="#" class="label-card">
+        <!-- レーベル8 -->
+        <a href="#" class="label-card scroll-fade-in">
           <div class="label-image-box">
             <img src="../images/satur.jpg" alt="satur" />
           </div>
@@ -214,7 +277,27 @@
     </footer>
 
     <script>
-      // タブ切り替え
+      // 1. スクロール監視の処理
+      document.addEventListener("DOMContentLoaded", () => {
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("is-visible");
+              } else {
+                entry.target.classList.remove("is-visible");
+              }
+            });
+          },
+          { threshold: 0.1 },
+        );
+
+        document.querySelectorAll(".scroll-fade-in").forEach((el) => {
+          observer.observe(el);
+        });
+      });
+
+      // 2. タブ切り替え処理
       document.querySelectorAll(".tab-item").forEach((item) => {
         item.addEventListener("click", function () {
           document.querySelectorAll(".tab-item").forEach((tab) => {
